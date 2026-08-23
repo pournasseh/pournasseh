@@ -1,11 +1,3 @@
-<div align="center">
-
-# pournasseh
-
-**Things I share.**
-
-</div>
-
 ## Arduino / OLED games
 
 A small collection of self-contained games built for ATmega328P-class Arduino boards, a 128×64 SSD1306 OLED, and three buttons.
