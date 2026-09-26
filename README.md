@@ -1,42 +1,79 @@
-## Arduino / OLED games
+<p align="center">
+  <a href="https://github.com/pournasseh/52hertz">
+    <img src="https://raw.githubusercontent.com/pournasseh/52hertz/main/assets/img/logo-v.png" alt="52Hertz" width="190">
+  </a>
+</p>
 
-A small collection of self-contained games built for ATmega328P-class Arduino boards, a 128×64 SSD1306 OLED, and three buttons.
+<h1 align="center">52Hertz</h1>
+
+<p align="center">
+  <strong>A radio does not have to be a stream.</strong><br>
+  Open-source tools for deterministic, shared-clock radio.
+</p>
+
+<p align="center">
+  <a href="https://github.com/pournasseh/52hertz/actions/workflows/ci.yml"><img src="https://github.com/pournasseh/52hertz/actions/workflows/ci.yml/badge.svg" alt="52Hertz CI"></a>
+  <a href="https://github.com/pournasseh/52hertz-lite/actions/workflows/ci.yml"><img src="https://github.com/pournasseh/52hertz-lite/actions/workflows/ci.yml/badge.svg" alt="52Hertz Lite CI"></a>
+  <a href="https://github.com/pournasseh/52hertz.js/actions/workflows/ci.yml"><img src="https://github.com/pournasseh/52hertz.js/actions/workflows/ci.yml/badge.svg" alt="52hertz.js CI"></a>
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/pournasseh/52hertz/main/assets/img/hero-img.png" alt="52Hertz radio" width="760">
+</p>
+
+## One idea, three repositories
 
 <table>
-  <tr>
-    <td width="50%" valign="top">
-      <a href="https://github.com/pournasseh/SkippyGecko"><img src="https://raw.githubusercontent.com/pournasseh/SkippyGecko/main/assets/splash.jpg" alt="SkippyGecko start screen" width="100%"></a>
-      <h3><a href="https://github.com/pournasseh/SkippyGecko">SkippyGecko</a></h3>
-      Endless-runner platforming with jumping, ducking, speed progression, and EEPROM high scores.
-    </td>
-    <td width="50%" valign="top">
-      <a href="https://github.com/pournasseh/BattleStream"><img src="https://raw.githubusercontent.com/pournasseh/BattleStream/main/assets/splash.jpg" alt="BattleStream start screen" width="100%"></a>
-      <h3><a href="https://github.com/pournasseh/BattleStream">BattleStream</a></h3>
-      A top-down scrolling shooter with fuel management, distance scoring, and persistent high scores.
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <a href="https://github.com/pournasseh/ImpactO"><img src="https://raw.githubusercontent.com/pournasseh/ImpactO/main/assets/splash.jpg" alt="ImpactO start screen" width="100%"></a>
-      <h3><a href="https://github.com/pournasseh/ImpactO">ImpactO</a></h3>
-      Brick-breaker gameplay with power-ups, combos, multi-ball, and stage clears.
-    </td>
-    <td width="50%" valign="top">
-      <a href="https://github.com/pournasseh/KUBIX"><img src="https://raw.githubusercontent.com/pournasseh/KUBIX/main/assets/splash.jpg" alt="KUBIX start screen" width="100%"></a>
-      <h3><a href="https://github.com/pournasseh/KUBIX">KUBIX</a></h3>
-      A monochrome falling-block puzzle with piece preview, score, lines, and elapsed-time stats.
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <a href="https://github.com/pournasseh/CastleDefend"><img src="https://raw.githubusercontent.com/pournasseh/CastleDefend/main/assets/splash.jpg" alt="CastleDefend start screen" width="100%"></a>
-      <h3><a href="https://github.com/pournasseh/CastleDefend">CastleDefend</a></h3>
-      Wave-based castle defense with destructible bunkers, progressive enemies, score, and lives.
-    </td>
-    <td width="50%" valign="top">
-      <a href="https://github.com/pournasseh/ForEarth"><img src="https://raw.githubusercontent.com/pournasseh/ForEarth/main/assets/splash.gif" alt="ForEarth start screen" width="100%"></a>
-      <h3><a href="https://github.com/pournasseh/ForEarth">ForEarth</a></h3>
-      A wave-based side shooter with varied enemies, power-ups, heavy laser attacks, and automatic firing.
-    </td>
-  </tr>
+<tr>
+<td width="33%" valign="top">
+<h3><a href="https://github.com/pournasseh/52hertz">52Hertz</a></h3>
+The complete self-hosted station manager: PHP + SQLite, media library, programmes, schedules, publishing, public player, PWA support, and an optional Icecast-compatible origin.
+<br><br>
+<a href="https://github.com/pournasseh/52hertz/releases/tag/v1.0.0-rc.3"><strong>v1.0.0-rc.3 →</strong></a>
+</td>
+<td width="33%" valign="top">
+<h3><a href="https://github.com/pournasseh/52hertz-lite">52Hertz Lite</a></h3>
+The same core idea reduced to static hosting: a browser editor, <code>station.json</code>, hosted audio, and a synchronized player. No PHP. No database.
+<br><br>
+<a href="https://github.com/pournasseh/52hertz-lite/releases/tag/v1.0.0-rc.3"><strong>v1.0.0-rc.3 →</strong></a>
+</td>
+<td width="33%" valign="top">
+<h3><a href="https://github.com/pournasseh/52hertz.js">52hertz.js</a></h3>
+The primitive by itself: pure ESM, no dependencies, no audio API. Give it a station and a time; it returns what should be playing and the exact offset.
+<br><br>
+<a href="https://github.com/pournasseh/52hertz.js/releases/tag/v0.2.1"><strong>v0.2.1 →</strong></a>
+</td>
+</tr>
 </table>
+
+## The primitive
+
+```text
+published station + shared clock → current item + exact offset
+```
+
+Traditional internet radio starts with a continuous stream. 52Hertz asks a
+smaller question: if every listener has the same published station definition
+and the same clock, why can't each listener independently derive what is on
+**right now**?
+
+That makes scheduled radio possible without requiring a permanent playout
+process. Hosting and bandwidth still exist; the always-on streaming origin is
+no longer a prerequisite for the deterministic player.
+
+## Why 52Hertz
+
+The name is a reference to the 52-hertz whale story: a voice remembered for
+calling on an unusual frequency.
+
+The project is built around the opposite outcome — lowering the infrastructure
+threshold between having something to say and being able to run your own
+station.
+
+<p align="center">
+  <a href="https://github.com/pournasseh/52hertz"><strong>Full</strong></a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/pournasseh/52hertz-lite"><strong>Lite</strong></a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/pournasseh/52hertz.js"><strong>Primitive</strong></a>
+</p>
