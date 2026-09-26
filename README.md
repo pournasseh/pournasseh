@@ -60,6 +60,13 @@ The deterministic clock by itself: give it a station and a time; it gives you th
 </tr>
 </table>
 
+## Engineering highlights
+
+- **Deterministic playout:** listeners independently derive the same current item and exact offset from published state plus time.
+- **Three deployment surfaces:** a full PHP/SQLite station manager, a static-hosting Lite edition, and a dependency-free ESM primitive.
+- **Edge-case driven clocking:** explicit clock-skew handling, deterministic DST behavior, revision handovers, and media-boundary recovery.
+- **Release engineering:** independent CI, reproducible archives, SHA-256 release assets, deployment hardening, and security-focused tests.
+
 ## Why 52Hertz
 
 The name comes from the 52-hertz whale story: a voice remembered for calling on a frequency unlike the others.
